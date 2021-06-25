@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav_graph"
+            app:startDestination="@id/SearchFragment">
+
+    <fragment
+        android:id="@+id/SearchFragment"
+        android:name="com.food.foodchallenge.ui.searchflow.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search">
+
+        <action android:id="@+id/action_SearchFragment_to_DetailsFragment"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:launchSingleTop="true"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"
+                app:destination="@id/DetailsFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/DetailsFragment"
+        android:name="com.food.foodchallenge.ui.detailsflow.DetailsFragment"
+        android:label="DetailsFragment"
+        tools:layout="@layout/fragment_details">
+
+        <argument
+            android:name="searchId"
+            app:argType="integer"/>
+
+    </fragment>
+</navigation>
