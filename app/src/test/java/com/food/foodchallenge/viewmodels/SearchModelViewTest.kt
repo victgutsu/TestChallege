@@ -134,8 +134,8 @@ class SearchModelViewTest : KotlinTestRunner() {
         // when
         viewModel.openItem(mockSearchItem)
         //result
-        viewModel.openDetailsEvent.observeForTesting {
-            Assert.assertEquals(viewModel.openDetailsEvent.value?.searchId, mockSearchItem.id)
+        viewModel.openSearchEvent.observeForTesting {
+            Assert.assertEquals(viewModel.openSearchEvent.value?.searchId, mockSearchItem.id)
         }
     }
 }
