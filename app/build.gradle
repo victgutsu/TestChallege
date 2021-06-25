@@ -72,4 +72,9 @@ dependencies {
     //rx
     implementation 'io.reactivex.rxjava3:rxjava:3.0.4'
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+
+    //custom ui
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation 'com.jakewharton.rxbinding4:rxbinding-appcompat:4.0.0'
+    implementation 'com.jakewharton.rxbinding4:rxbinding-swiperefreshlayout:4.0.0'
 }

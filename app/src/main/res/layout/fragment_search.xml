@@ -20,6 +20,7 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:layout_width="match_parent"
             tools:itemCount="5"
+            tools:listitem="@layout/recyclerview_search_item"
             android:layout_height="wrap_content"/>
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

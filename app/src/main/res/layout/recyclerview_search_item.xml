@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/startStreamView"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:animateLayoutChanges="true"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/margin_standart"
+    app:cardElevation="2dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true" android:focusable="true">
+
+
+    <ImageView
+        android:id="@+id/card_point_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foreground="@drawable/gradient_header"
+        android:scaleType="centerCrop"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:id="@+id/name"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/area"
+            android:layout_marginBottom="@dimen/margin_standart_half"
+            android:layout_marginStart="@dimen/margin_standart_half"
+            tools:text="Name"
+            android:layout_height="wrap_content"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="wrap_content"
+            android:id="@+id/area"
+            android:textColor="@color/white"
+            android:layout_marginBottom="@dimen/margin_standart_half"
+            android:layout_marginStart="@dimen/margin_standart_half"
+            tools:text="Category | Area of the meal"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

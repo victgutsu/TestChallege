@@ -36,4 +36,9 @@ open class NetworkClient {
             .build()
         apiService = retrofit.create(ApiService::class.java)
     }
+
+    fun searchMeals(query: String): Single<List<SearchMealServer>> {
+        return apiService.searchMeals(query)
+            .map { it.meals ?: throw IllegalStateException("Can't find meals for <<$query>>") }
+    }
 }
