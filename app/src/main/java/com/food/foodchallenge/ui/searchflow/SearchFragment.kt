@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.food.foodchallenge.databinding.FragmentSearchBinding
 import com.food.foodchallenge.ui.BaseFragment
 import com.food.foodchallenge.ui.BaseViewModel
@@ -80,7 +81,7 @@ class SearchFragment : BaseFragment() {
             searchAdapter.submitList(it)
         }
         viewModel.openSearchEvent.observe(viewLifecycleOwner) {
-
+            findNavController().navigate(SearchFragmentDirections.actionSearchFragmentToDetailsFragment(searchId = it.searchId))
         }
     }
 

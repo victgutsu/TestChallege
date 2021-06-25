@@ -11,8 +11,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
-import java.util.regex.Matcher
-import java.util.regex.Pattern
 
 
 open class NetworkClient {
@@ -41,4 +39,16 @@ open class NetworkClient {
         return apiService.searchMeals(query)
             .map { it.meals ?: throw IllegalStateException("Can't find meals for <<$query>>") }
     }
+
+    fun detailsMeal(id: Int): Single<DetailsMealServer> {
+        return apiService.detailsMeal(id)
+            .map {
+                // Fixme current implementation can be redone with GsonAdapter (but that moment should be discussed)
+                val meals = it.meals ?: throw IllegalStateException("Can't find detail meal for <<$id>>")
+
+                //seems we need only one item (details should be one i suppose)
+                MealDetailsParser.parseToMealDetails(meals.first())
+            }
+    }
+
 }
