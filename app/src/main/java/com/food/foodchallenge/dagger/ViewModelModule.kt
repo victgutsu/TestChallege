@@ -1,6 +1,7 @@
 package com.food.foodchallenge.dagger
 
 import androidx.lifecycle.ViewModel
+import com.food.foodchallenge.ui.detailsflow.DetailsViewModel
 import com.food.foodchallenge.ui.searchflow.SearchViewModel
 import dagger.Binds
 import dagger.MapKey
@@ -14,6 +15,11 @@ abstract class ViewModelsModule {
     @IntoMap
     @ViewModelKey(SearchViewModel::class)
     abstract fun bindSearchViewModel(viewModel: SearchViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(DetailsViewModel::class)
+    abstract fun bindDetailsViewModel(viewModel: DetailsViewModel): ViewModel
 }
 
 @MustBeDocumented
